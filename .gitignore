@@ -169,3 +169,7 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# MPS or LP file
+*.mps
+*.lp
