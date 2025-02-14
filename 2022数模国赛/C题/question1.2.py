@@ -17,21 +17,34 @@ sns.set_theme(context='paper', style='darkgrid', font='DengXian', font_scale=1.2
 fig = plt.figure(1)
 for i, col in enumerate(columns):
     ax = fig.add_subplot(3, 5, i + 1)
-    sns.boxplot(df, x='表面风化', y=col, hue='表面风化', order=['风化', '无风化'], width=0.5, legend=False, ax=ax)
+    sns.boxplot(df, x='类型', y=col, hue='表面风化', order=['铅钡', '高钾'], hue_order=['无风化', '风化'], 
+                width=0.5, legend=False, ax=ax)
     ax.set_xlabel('')
     ax.set_ylabel('')
     ax.set_title(col, fontsize=12)
-plt.subplots_adjust(hspace=0.3)
+plt.subplots_adjust(hspace=0.35)
 
 fig = plt.figure(2)
 for i, col in enumerate(columns):
-    ax = fig.add_subplot(3, 5, i + 1)
-    sns.kdeplot(df, x=col, hue='表面风化', hue_order=['风化', '无风化'], fill=True, ax=ax)
+    ax = fig.add_subplot(4, 4, i + 1)
+    sns.kdeplot(df[df['类型'] == '铅钡'], x=col, hue='表面风化', hue_order=['风化', '无风化'], 
+                palette=['#1F77B4', '#FF7E0D'], fill=True, ax=ax)
     ax.set_xlabel('')
     ax.yaxis.set_major_formatter(FuncFormatter(lambda x, _: f'{x:.2f}'))
     ax.get_legend().set_loc('upper right')
     ax.set_title(col, fontsize=12)
-plt.subplots_adjust(left=0.1, right=0.9, top=0.9, bottom=0.1, wspace=0.3, hspace=0.3)
+plt.subplots_adjust(top=0.95, bottom=0.05, wspace=0.3, hspace=0.35)
+
+fig = plt.figure(3)
+for i, col in enumerate(columns):
+    ax = fig.add_subplot(4, 4, i + 1)
+    sns.kdeplot(df[df['类型'] == '高钾'], x=col, hue='表面风化', hue_order=['风化', '无风化'], 
+                palette=['#1F77B4', '#FF7E0D'], fill=True, ax=ax)
+    ax.set_xlabel('')
+    ax.yaxis.set_major_formatter(FuncFormatter(lambda x, _: f'{x:.2f}'))
+    ax.get_legend().set_loc('upper right')
+    ax.set_title(col, fontsize=12)
+plt.subplots_adjust(top=0.95, bottom=0.05, wspace=0.3, hspace=0.35)
 
 stat = []
 alpha = 0.05
