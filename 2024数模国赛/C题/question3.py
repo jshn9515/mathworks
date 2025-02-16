@@ -1,8 +1,8 @@
+import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import seaborn as sns
 import statsmodels.api as sm
-import matplotlib.pyplot as plt
 
 sheets = list(map(str, range(2024, 2031)))
 df1 = pd.read_excel('问题2-结果.xlsx', sheet_name=sheets, index_col=[0, 1])

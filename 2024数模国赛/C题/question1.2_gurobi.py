@@ -1,6 +1,6 @@
+import gurobipy as gp
 import numpy as np
 import pandas as pd
-import gurobipy as gp
 
 df1 = pd.read_excel('附件/附件1.xlsx', sheet_name='乡村的现有耕地', index_col=0, usecols='A:C')
 df1 = pd.concat([df1, df1.loc['D1':'F4']], axis=0)
