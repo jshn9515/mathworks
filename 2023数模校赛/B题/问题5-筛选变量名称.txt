@@ -1,0 +1,11 @@
+fBodyAcc-mean()-X
+fBodyAcc-mean()-Y
+fBodyAcc-mean()-Z
+fBodyAccMag-energy()
+fBodyAccMag-meanFreq()
+tBodyAcc-max()-X
+tBodyAcc-max()-Z
+tBodyAcc-mean()-Z
+tBodyAcc-min()-X
+tBodyAcc-min()-Z
+tBodyAccJerk-max()-Z

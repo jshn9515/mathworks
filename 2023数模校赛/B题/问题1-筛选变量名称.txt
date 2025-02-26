@@ -1,0 +1,10 @@
+angle(X,gravityMean)
+tGravityAcc-mean()-X
+tGravityAcc-min()-X
+tGravityAcc-min()-Y
+tGravityAcc-max()-Y
+tGravityAcc-energy()-X
+tBodyAcc-std()-X
+tGravityAcc-max()-X
+tGravityAcc-energy()-Y
+fBodyAccJerk-bandsEnergy()-1,8
