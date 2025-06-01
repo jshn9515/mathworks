@@ -1,3 +1,4 @@
+import os
 import statistics as stat
 
 import pandas as pd
@@ -40,6 +41,9 @@ df4.loc[idx1, '表面风化'] = '风化'
 df4.loc[idx2, '表面风化'] = '无风化'
 df2.set_index('文物编号', inplace=True)
 df4.set_index('文物编号', inplace=True)
+
+if not os.path.exists('数据'):
+    os.mkdir('数据')
 
 with pd.ExcelWriter('附件/附件-预处理后数据.xlsx') as writer:
     df1.to_excel(writer, sheet_name='表单1', float_format='%.2f')
