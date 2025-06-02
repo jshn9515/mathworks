@@ -66,9 +66,9 @@ DecisionBoundaryDisplay.from_estimator(
     df1,
     grid_resolution=1000,
     plot_method='contour',
-    ax=ax,
     levels=[-1, 0, 1],
     colors='black',
+    ax=ax,
 )
 scatter = ax.scatter(
     df1[var1[0]], df1[var1[1]], c=T1, s=60, cmap='viridis', edgecolors='black'
@@ -96,9 +96,9 @@ DecisionBoundaryDisplay.from_estimator(
     df2,
     grid_resolution=1000,
     plot_method='contour',
-    ax=ax,
     levels=[-1, 0, 1],
     colors='black',
+    ax=ax,
 )
 scatter = ax.scatter(
     df2[var2[0]], df2[var2[1]], c=T2, s=60, cmap='viridis', edgecolors='black'
