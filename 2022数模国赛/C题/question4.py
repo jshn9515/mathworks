@@ -43,7 +43,7 @@ sns.heatmap(
     annot_kws=dict(fontsize=10),
     ax=ax,
 )
-plt.xticks(rotation=30)
+ax.tick_params('x', rotation=30)
 fig.subplots_adjust(left=0.1, bottom=0.08, right=0.9, top=0.97)
 fig.savefig('数据/问题4-铅钡相关系数矩阵.svg', dpi=300)
 
@@ -59,6 +59,6 @@ sns.heatmap(
     annot_kws=dict(fontsize=10),
     ax=ax,
 )
-plt.xticks(rotation=30)
+ax.tick_params('x', rotation=30)
 fig.subplots_adjust(left=0.1, bottom=0.08, right=0.9, top=0.97)
 fig.savefig('数据/问题4-高钾相关系数矩阵.svg', dpi=300)
