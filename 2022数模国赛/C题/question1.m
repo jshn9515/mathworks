@@ -54,11 +54,9 @@ for col = tbl1.Properties.VariableNames
     nexttile;
     [f, xf] = kde(tbl1{:, col}, Bandwidth=0.5);
     hold on
-    area(xf, f, EdgeColor='#1F77B4', LineWidth=1, FaceColor='#1F77B4', ...
-        FaceAlpha=0.6, ShowBaseLine='off');
+    area(xf, f, EdgeColor='#1F77B4', LineWidth=1, FaceColor='#1F77B4', FaceAlpha=0.6);
     [f, xf] = kde(tbl2{:, col}, Bandwidth=0.5);
-    area(xf, f, EdgeColor='#FF7E1D', LineWidth=1, FaceColor='#FF7E1D', ...
-        FaceAlpha=0.6, ShowBaseLine='off');
+    area(xf, f, EdgeColor='#FF7E1D', LineWidth=1, FaceColor='#FF7E1D', FaceAlpha=0.6);
     title(col);
     set(gca, FontName='Microsoft YaHei', FontSize=12, TitleFontWeight='normal');
     hold off
