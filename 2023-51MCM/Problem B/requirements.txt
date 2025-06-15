@@ -1,0 +1,14 @@
+numpy==2.3.0
+pandas==2.3.0
+openpyxl==3.1.5
+xlsxwriter==3.2.3
+pyarrow==20.0.0
+matplotlib==3.10.3
+networkx==3.5.0
+scipy==1.15.3
+scikit-learn==1.7.0
+sktime==0.37.0
+statsmodels==0.14.4
+tqdm==4.67.1
+gurobipy==12.0.2
+xgboost==3.0.2
