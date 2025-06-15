@@ -33,7 +33,7 @@ index = pd.MultiIndex.from_product([time_range.to_list(), df1.index.to_list()])
 df2 = pd.DataFrame(index=index, columns=['Indicator', 'Cargo'])
 df2.loc['2023-04-28', 'Indicator'] = df1['2023-04-28'] > 0
 df2.loc['2023-04-28', 'Cargo'] = df1['2023-04-28']
-df2.loc['2023-04-29', 'Cargo'] = df1['2023-04-29']
 df2.loc['2023-04-29', 'Indicator'] = df1['2023-04-29'] > 0
+df2.loc['2023-04-29', 'Cargo'] = df1['2023-04-29']
 df2.rename_axis(['Date', 'Pair'], inplace=True)
 df2.to_excel('data/问题3-发货-收货站点城市间快递运输量.xlsx')
