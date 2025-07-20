@@ -10,5 +10,5 @@ scikit-learn==1.7.1
 sktime==0.37.1
 statsmodels==0.14.4
 tqdm==4.67.1
-gurobipy==12.0.2
+gurobipy==12.0.3
 xgboost==3.0.2
