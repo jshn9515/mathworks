@@ -7,7 +7,7 @@ matplotlib==3.10.3
 networkx==3.5.0
 scipy==1.16.0
 scikit-learn==1.7.1
-sktime==0.37.1
+sktime==0.38.4
 statsmodels==0.14.5
 tqdm==4.67.1
 gurobipy==12.0.3
