@@ -42,11 +42,10 @@ for k in range(num_paths):
             expr2 = gp.quicksum(f[i, n, k] for i in G.predecessors(n))
             model.addConstr(expr1 == expr2)
 
-    for i, j in G.edges:
-        model.addConstr(f[i, j, k] <= y[k])
+    model.addConstrs(f[i, j, k] <= y[k] for i, j in G.edges)
 
     model.addGenConstrIndicator(y[k], False, q[k] == 0)
-    model.addConstr(temp[k] == 1 + (q[k] / 200) ** 3)
+    model.addGenConstrNL(temp[k], 1 + (q[k] / 200) ** 3)
 
 cost = gp.quicksum(
     G.edges[i, j]['Cost'] * temp[k] * f[i, j, k]
