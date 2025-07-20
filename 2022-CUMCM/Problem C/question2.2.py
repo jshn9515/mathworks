@@ -56,6 +56,7 @@ with pd.ExcelWriter('data/问题2-铅钡高钾聚类数据.xlsx') as writer:
 
 Mdl1 = SVC(kernel='linear')
 Mdl1.fit(df1, T1)
+num_class = len(set(T1))
 score = Mdl1.score(df1, T1)
 print(f'The accuracy of BaO2 is: {score:.2f}')
 
@@ -67,7 +68,7 @@ DecisionBoundaryDisplay.from_estimator(
     grid_resolution=1000,
     plot_method='contour',
     levels=[-1, 0, 1],
-    colors='black',
+    multiclass_colors=['black'] * num_class,
     ax=ax,
 )
 scatter = ax.scatter(
@@ -86,6 +87,7 @@ fig.savefig('data/问题2-铅钡SVM分类图.svg', dpi=300)
 
 Mdl2 = SVC(kernel='linear')
 Mdl2.fit(df2, T2)
+num_class = len(set(T2))
 score = Mdl2.score(df2, T2)
 print(f'The accuracy of KMnO4 is: {score:.2f}')
 
@@ -97,7 +99,7 @@ DecisionBoundaryDisplay.from_estimator(
     grid_resolution=1000,
     plot_method='contour',
     levels=[-1, 0, 1],
-    colors='black',
+    multiclass_colors=['black'] * num_class,
     ax=ax,
 )
 scatter = ax.scatter(

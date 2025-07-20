@@ -6,7 +6,7 @@ pyarrow==20.0.0
 matplotlib==3.10.3
 networkx==3.5.0
 scipy==1.16.0
-scikit-learn==1.7.0
+scikit-learn==1.7.1
 sktime==0.37.1
 statsmodels==0.14.4
 tqdm==4.67.1
