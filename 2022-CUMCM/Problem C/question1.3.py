@@ -1,3 +1,4 @@
+import numpy as np
 import pandas as pd
 import skbio.stats.composition as comp
 
@@ -31,8 +32,8 @@ if TypstExport:
 df1 = df1 + (df2.mean() - df1.mean())
 df3 = df3 + (df4.mean() - df3.mean())
 
-df1[:] = comp.clr_inv(df1.to_numpy()) * 100
-df3[:] = comp.clr_inv(df3.to_numpy()) * 100
+df1[:] = np.asarray(comp.clr_inv(df1)) * 100
+df3[:] = np.asarray(comp.clr_inv(df3)) * 100
 
 with pd.ExcelWriter('data/问题1-铅钡高钾还原数据.xlsx') as writer:
     df1.to_excel(writer, sheet_name='铅钡-还原', float_format='%.2f')

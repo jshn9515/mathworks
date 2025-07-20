@@ -1,6 +1,7 @@
 import os
 import statistics as stat
 
+import numpy as np
 import pandas as pd
 import skbio.stats.composition as comp
 
@@ -27,7 +28,7 @@ df3 = pd.read_excel('attachment/附件.xlsx', sheet_name='表单3', index_col=[0
 df3.fillna(0.04, inplace=True)
 # calculate the CLR transform
 df3[df3 == 0] += 0.04
-df3.iloc[:] = comp.clr(df3.to_numpy())
+df3.iloc[:] = np.asarray(comp.clr(df3))
 
 # combine df1 and df2 together
 df2['文物编号'] = df2.index
