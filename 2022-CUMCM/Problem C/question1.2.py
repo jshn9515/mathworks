@@ -24,7 +24,9 @@ sns.set_theme(
     rc={'axes.unicode_minus': False},
 )
 
-fig = plt.figure(1, figsize=(15, 8))
+plt.rc('figure', figsize=(15, 8))
+
+fig = plt.figure(1)
 for i, col in enumerate(columns):
     ax = fig.add_subplot(3, 5, i + 1)
     sns.boxplot(
@@ -42,9 +44,9 @@ for i, col in enumerate(columns):
     ax.set_ylabel('')
     ax.set_title(col)
 fig.subplots_adjust(left=0.05, bottom=0.05, right=0.95, top=0.95, hspace=0.3)
-fig.savefig('data/问题1-风化前后化学成分含量箱线图.svg', dpi=300)
+fig.savefig('data/问题1-风化前后化学成分含量箱线图.svg')
 
-fig = plt.figure(2, figsize=(15, 8))
+fig = plt.figure(2)
 for i, col in enumerate(columns):
     ax = fig.add_subplot(4, 4, i + 1)
     sns.kdeplot(
@@ -63,9 +65,9 @@ for i, col in enumerate(columns):
 fig.subplots_adjust(
     left=0.05, bottom=0.05, right=0.95, top=0.95, wspace=0.3, hspace=0.35
 )
-fig.savefig('data/问题1-风化前后铅钡化学成分含量核密度图.svg', dpi=300)
+fig.savefig('data/问题1-风化前后铅钡化学成分含量核密度图.svg')
 
-fig = plt.figure(3, figsize=(15, 8))
+fig = plt.figure(3)
 for i, col in enumerate(columns):
     ax = fig.add_subplot(4, 4, i + 1)
     sns.kdeplot(
@@ -84,7 +86,7 @@ for i, col in enumerate(columns):
 fig.subplots_adjust(
     left=0.05, bottom=0.05, right=0.95, top=0.95, wspace=0.3, hspace=0.35
 )
-fig.savefig('data/问题1-风化前后高钾化学成分含量核密度图.svg', dpi=300)
+fig.savefig('data/问题1-风化前后高钾化学成分含量核密度图.svg')
 
 stat1 = []
 alpha = 0.05

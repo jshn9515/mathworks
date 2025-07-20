@@ -37,11 +37,13 @@ imp = Mdl1.feature_importances_
 
 sns.set_theme(context='paper', style='darkgrid', font='DengXian', font_scale=1.8)
 
-fig = plt.figure(1, figsize=(15, 8))
+plt.rc('figure', figsize=(15, 8))
+
+fig = plt.figure(1)
 ax = fig.add_axes((0.35, 0.05, 0.3, 0.92))
 h = ax.bar(X.columns, imp, width=0.4, linewidth=0.8, edgecolor='black', alpha=0.8)
 ax.bar_label(h, fmt='%.2f', padding=4)
-fig.savefig('data/问题2-决策树重要性比较图.svg', dpi=300)
+fig.savefig('data/问题2-决策树重要性比较图.svg')
 
 df_BaO2 = df2[df2['类型'] == '铅钡']
 df_KMnO4 = df2[df2['类型'] == '高钾']

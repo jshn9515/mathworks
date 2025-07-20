@@ -38,11 +38,13 @@ imp = Mdl1.feature_importances_
 imp = imp / np.sum(imp)
 
 plt.rc('font', family='Source Han Serif SC', size=16)
-plt.figure(1, figsize=(15, 8))
+plt.rc('figure', figsize=(15, 8))
+
+plt.figure(1)
 h = plt.bar(range(7, 0, -1), imp, width=0.5, edgecolor='black', alpha=0.6)
 plt.bar_label(h, fmt='%.2f', padding=2)
 plt.subplots_adjust(left=0.05, bottom=0.08, right=0.95, top=0.97)
-plt.savefig('data/问题3-决策树变量重要性.svg', dpi=300)
+plt.savefig('data/问题3-决策树变量重要性.svg')
 
 df1.fillna(0, inplace=True)
 time_range = pd.date_range(start='2023-04-28', end='2023-04-29', freq='D')

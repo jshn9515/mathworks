@@ -28,24 +28,26 @@ sns.set_theme(
     rc={'axes.unicode_minus': False},
 )
 
+plt.rc('figure', figsize=(15, 8))
+
 L1 = cluster.linkage(df1, method='ward')
 L2 = cluster.linkage(df2, method='ward')
 T1 = cluster.fcluster(L1, 3, criterion='maxclust')
 T2 = cluster.fcluster(L2, 3, criterion='maxclust')
 
-fig = plt.figure(1, figsize=(15, 8))
+fig = plt.figure(1)
 ax = fig.add_subplot(1, 1, 1)
 cluster.dendrogram(L1, labels=df1.index, ax=ax)
 ax.set_xticklabels(ax.get_xticklabels(), fontdict={'fontsize': 12})
 fig.subplots_adjust(left=0.05, bottom=0.15, right=0.95, top=0.97)
-fig.savefig('data/问题2-铅钡聚类图.svg', dpi=300)
+fig.savefig('data/问题2-铅钡聚类图.svg')
 
-fig = plt.figure(2, figsize=(15, 8))
+fig = plt.figure(2)
 ax = fig.add_subplot(1, 1, 1)
 cluster.dendrogram(L2, labels=df2.index, ax=ax)
 ax.set_xticklabels(ax.get_xticklabels(), fontdict={'fontsize': 12})
 fig.subplots_adjust(left=0.05, bottom=0.05, right=0.95, top=0.97)
-fig.savefig('data/问题2-高钾聚类图.svg', dpi=300)
+fig.savefig('data/问题2-高钾聚类图.svg')
 
 df4 = pd.Series(T1, index=df1.index, name='类别')
 df5 = pd.Series(T2, index=df2.index, name='类别')
@@ -60,7 +62,7 @@ num_class = len(set(T1))
 score = Mdl1.score(df1, T1)
 print(f'The accuracy of BaO2 is: {score:.2f}')
 
-fig = plt.figure(3, figsize=(15, 8))
+fig = plt.figure(3)
 ax = fig.add_subplot(1, 1, 1)
 DecisionBoundaryDisplay.from_estimator(
     Mdl1,
@@ -83,7 +85,7 @@ ax.scatter(
 )
 ax.legend(*scatter.legend_elements(), loc='upper right', title='Classes')
 fig.subplots_adjust(left=0.08, bottom=0.08, right=0.95, top=0.97)
-fig.savefig('data/问题2-铅钡SVM分类图.svg', dpi=300)
+fig.savefig('data/问题2-铅钡SVM分类图.svg')
 
 Mdl2 = SVC(kernel='linear')
 Mdl2.fit(df2, T2)
@@ -91,7 +93,7 @@ num_class = len(set(T2))
 score = Mdl2.score(df2, T2)
 print(f'The accuracy of KMnO4 is: {score:.2f}')
 
-fig = plt.figure(4, figsize=(15, 8))
+fig = plt.figure(4)
 ax = fig.add_subplot(1, 1, 1)
 DecisionBoundaryDisplay.from_estimator(
     Mdl2,
@@ -114,4 +116,4 @@ ax.scatter(
 )
 ax.legend(*scatter.legend_elements(), loc='upper right', title='Classes')
 fig.subplots_adjust(left=0.08, bottom=0.08, right=0.95, top=0.97)
-fig.savefig('data/问题2-高钾SVM分类图.svg', dpi=300)
+fig.savefig('data/问题2-高钾SVM分类图.svg')

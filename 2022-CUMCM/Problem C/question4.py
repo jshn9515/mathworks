@@ -31,7 +31,9 @@ labels = labels.to_list()
 
 plt.rc('font', family=['DejaVu Sans', 'DengXian'], size=12)
 plt.rc('axes', unicode_minus=False)
-fig = plt.figure(1, figsize=(15, 8))
+plt.rc('figure', figsize=(15, 8))
+
+fig = plt.figure(1)
 ax = fig.add_subplot(1, 1, 1)
 sns.heatmap(
     df1.corr(),
@@ -45,9 +47,9 @@ sns.heatmap(
 )
 ax.tick_params('x', rotation=30)
 fig.subplots_adjust(left=0.1, bottom=0.08, right=0.9, top=0.97)
-fig.savefig('data/问题4-铅钡相关系数矩阵.svg', dpi=300)
+fig.savefig('data/问题4-铅钡相关系数矩阵.svg')
 
-fig = plt.figure(2, figsize=(15, 8))
+fig = plt.figure(2)
 ax = fig.add_subplot(1, 1, 1)
 sns.heatmap(
     df2.corr(),
@@ -61,4 +63,4 @@ sns.heatmap(
 )
 ax.tick_params('x', rotation=30)
 fig.subplots_adjust(left=0.1, bottom=0.08, right=0.9, top=0.97)
-fig.savefig('data/问题4-高钾相关系数矩阵.svg', dpi=300)
+fig.savefig('data/问题4-高钾相关系数矩阵.svg')

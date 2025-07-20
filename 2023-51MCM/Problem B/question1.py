@@ -15,8 +15,9 @@ G: nx.DiGraph = nx.from_pandas_edgelist(
 )
 
 plt.rc('font', family='Source Han Serif SC', size=16)
+plt.rc('figure', figsize=(15, 8))
 
-fig = plt.figure(1, figsize=(15, 8))
+fig = plt.figure(1)
 ax = fig.add_subplot(1, 1, 1)
 pos = nx.kamada_kawai_layout(G)
 nx.draw_networkx_nodes(
@@ -44,7 +45,7 @@ nx.draw_networkx_labels(
     ax=ax,
 )
 fig.subplots_adjust(left=0.03, bottom=0.03, right=0.97, top=0.97)
-plt.savefig('data/问题1-城市快递运输量网络图.svg', dpi=300)
+plt.savefig('data/问题1-城市快递运输量网络图.svg')
 
 # TODO: Consider time varying PageRank
 # For now, we use a static PageRank based on the total PCS

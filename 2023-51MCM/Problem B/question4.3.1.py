@@ -64,9 +64,10 @@ with pd.ExcelWriter(
     df.to_excel(writer, sheet_name='启发式算法敏感性检验', float_format='%.4f')
 
 plt.rc('font', family='Source Han Serif SC', size=16)
-plt.figure(1, figsize=(15, 8))
+plt.rc('figure', figsize=(15, 8))
+plt.figure(1)
 plt.plot(df, '-o')
 plt.ylabel('总运费')
 plt.legend(df.columns)
 plt.subplots_adjust(left=0.08, bottom=0.05, right=0.95, top=0.95)
-plt.savefig('data/问题4-启发式算法敏感性检验.svg', dpi=300)
+plt.savefig('data/问题4-启发式算法敏感性检验.svg')
