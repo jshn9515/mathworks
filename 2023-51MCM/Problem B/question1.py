@@ -6,7 +6,7 @@ df1 = pd.read_parquet('attachment/附件1.parquet')
 
 df1 = df1.groupby(['Deliver', 'Receiver']).sum().reset_index()
 
-G: nx.DiGraph = nx.from_pandas_edgelist(
+G = nx.from_pandas_edgelist(
     df1,
     source='Deliver',
     target='Receiver',
