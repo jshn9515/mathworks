@@ -15,7 +15,7 @@ time_range = time_range.strftime('%Y-%m-%d')
 sensitivity = list(range(195, 210, 5))
 columns = ['Cargo-' + str(i) for i in sensitivity]
 
-G: nx.DiGraph = nx.from_pandas_edgelist(
+G = nx.from_pandas_edgelist(
     df2,
     source='Start',
     target='End',
