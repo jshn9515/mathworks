@@ -18,7 +18,7 @@ df2 = pd.read_parquet('attachment/附件3.parquet')
 time_range = pd.date_range('2023-04-23', '2023-04-27', freq='D')
 time_range = time_range.strftime('%Y-%m-%d')
 
-G: nx.DiGraph = nx.from_pandas_edgelist(
+G = nx.from_pandas_edgelist(
     df2,
     source='Start',
     target='End',

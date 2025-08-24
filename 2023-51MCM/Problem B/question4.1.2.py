@@ -4,7 +4,7 @@ import pandas as pd
 
 df1 = pd.read_parquet('attachment/附件3.parquet')
 
-G: nx.DiGraph = nx.from_pandas_edgelist(
+G = nx.from_pandas_edgelist(
     df1,
     source='Start',
     target='End',
