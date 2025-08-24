@@ -51,7 +51,8 @@ plt.savefig('data/问题5-G-V城市对快递运输量FFT图.svg')
 res1 = tsa.adfuller(df1, regression='c')
 # Null hypothesis: The time series is level or trend stationary.
 # Alternative hypothesis: The time series is non-stationary.
-warnings.simplefilter('ignore', InterpolationWarning)
+warnings.filterwarnings('ignore', category=InterpolationWarning, lineno=56)
+# Suppress warnings about interpolation in the KPSS test
 res2 = tsa.kpss(df1, regression='c')
 
 # Both tests indicate that the time series is stationary.
