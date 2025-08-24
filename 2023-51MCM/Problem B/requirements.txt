@@ -5,7 +5,7 @@ xlsxwriter==3.2.5
 pyarrow==21.0.0
 matplotlib==3.10.5
 networkx==3.5.0
-scipy==1.16.0
+scipy==1.16.1
 scikit-learn==1.7.1
 sktime==0.38.4
 statsmodels==0.14.5
