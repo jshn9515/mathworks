@@ -11,4 +11,4 @@ sktime==0.38.4
 statsmodels==0.14.5
 tqdm==4.67.1
 gurobipy==12.0.3
-xgboost==3.0.2
+xgboost==3.0.4
