@@ -69,7 +69,7 @@ tsaplots.plot_pacf(df1, clip_on=False, ax=ax)
 fig.subplots_adjust(left=0.1, bottom=0.05, right=0.9, top=0.95, hspace=0.25)
 fig.savefig('data/问题2-ACF与PACF图.svg')
 
-Mdl = tsa.ARIMA(df1, order=(0, 0, 4), trend='c', missing='raise')
+Mdl = tsa.ARIMA(df1, order=(2, 0, 2), trend='c', missing='raise')
 Mdl = Mdl.fit(method='statespace')
 with open('data/问题2-ARIMA模型结果.html', 'w', encoding='utf-8') as fp:
     summary = Mdl.summary()
